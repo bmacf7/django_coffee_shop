@@ -1,6 +1,11 @@
 {% extends "base.html" %} {% load tailwind_filters %} {% block content %}
 <form action="{% url 'product_form' %}" method="post">
   {% csrf_token %} {{ form|crispy }}
-  <button type="submit">Agregar Producto</button>
+  <button
+    class="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
+    type="submit"
+  >
+    Agregar Producto
+  </button>
 </form>
 {% endblock %}
