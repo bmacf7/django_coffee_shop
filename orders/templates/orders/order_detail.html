@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="text-3xl font-bold underline">Detalle de la Orden</h1>
+<p>Orden #: {{ order.id }}</p>
+<p>Creado por: {{ order.user.username }} @ {{ order.created_at|date }}</p>
+<br />
+<p>Productos:</p>
+<ul>
+  {% for product in order.orderproduct_set.all %}
+  <li>
+    {{ product.quantity }}x {{ product.product.name }}
+    <p>Sub-total: s/{{ product.price }}</p>
+  </li>
+  <br />
+  {% endfor %}
+  <p>Grand total: s/{{ grand_total }}</p>
+</ul>
+{% endblock %}
