@@ -1,6 +1,7 @@
 {% extends "base.html" %} {% load tailwind_filters %} {% block content %}
-<form action="{% url 'product_form' %}" method="post">
+<h1 class="text-3xl font-bold underline">Pantalla de login</h1>
+<form method="post">
   {% csrf_token %} {{ form|crispy }}
-  <button type="submit">Agregar Producto</button>
+  <button type="submit">Iniciar sesión</button>
 </form>
 {% endblock %}

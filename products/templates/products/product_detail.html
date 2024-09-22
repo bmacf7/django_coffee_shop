@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detalle del Producto</title>
-  </head>
-  <body>
-    <h1>Detalle del Producto</h1>
-    <p>Nombre: {{ product.name }}</p>
-    <p>Descripción: {{ product.description }}</p>
-    <p>Precio: {{ product.price }}</p>
-    <p>Disponible: {{ product.available }}</p>
-    <p>Foto: {{ product.image }}</p>
-  </body>
-</html>
+{% extends 'base.html' %} {% block content %}
+<h1 class="text-3xl font-bold underline">Detalle del Producto</h1>
+<p>Nombre: {{ product.name }}</p>
+<p>Descripción: {{ product.description }}</p>
+<p>Precio: {{ product.price }}</p>
+{% if product.available %}
+<p>Disponible</p>
+{% else %}
+<p>No Disponible</p>
+{% endif %} {% if product.image %}
+<p>Foto: {{ product.image }}</p>
+{% endif %} {% endblock content %}
