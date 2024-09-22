@@ -1,0 +1,8 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Lista de Productos</h1>
+<ul>
+  {% for product in products %}
+  <li>Producto:{{ product.name }} = s/{{ product.price }}</li>
+  {% endfor %}
+</ul>
+{% endblock content %}
